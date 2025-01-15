@@ -6,17 +6,17 @@ import { DepositModalProps } from "./types"
 export function DepositModal({ open, onClose }: DepositModalProps) {
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="bg-zinc-900 border-zinc-800">
+      <DialogContent className="bg-zinc-100 border-zinc-300">
         <DialogHeader>
-          <DialogTitle className="text-white">Deposit Funds</DialogTitle>
+          <DialogTitle className="text-black">Deposit Funds</DialogTitle>
         </DialogHeader>
         <div className="space-y-4">
           <div>
-            <label className="text-sm text-zinc-400">Amount (INR)</label>
+            <label className="text-sm text-zinc-600">Amount (INR)</label>
             <Input 
               type="number" 
               placeholder="Enter amount" 
-              className="mt-1 bg-zinc-800 border-zinc-700 text-white"
+              className="mt-1 bg-zinc-100 border-zinc-300 text-black"
             />
           </div>
           <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-semibold">
