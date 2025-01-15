@@ -61,21 +61,27 @@ export default function App() {
         <BalanceChart data={balanceHistory} />
 
         <div>
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="text-lg font-semibold text-black">Transactions</h3>
-            <Select value={filter} onValueChange={setFilter}>
-              <SelectTrigger className="w-[180px] bg-zinc-100 border-zinc-300 text-black">
-                <SelectValue placeholder="Filter transactions" />
-              </SelectTrigger>
-              <SelectContent className="bg-zinc-100 border-zinc-300">
-                <SelectItem value="all">All Transactions</SelectItem>
-                <SelectItem value="deposits">Deposits Only</SelectItem>
-                <SelectItem value="withdrawals">Withdrawals Only</SelectItem>
-              </SelectContent>
-            </Select>
+          <div className="sticky top-[69px] bg-transparent z-20 py-2 px-4 -mx-4">
+            <div className="max-w-7xl mx-auto">
+              <div className="bg-zinc-50 rounded-xl p-4 border border-zinc-200 shadow-sm backdrop-blur-md">
+                <div className="flex justify-between items-center">
+                  <h3 className="text-2xl font-semibold text-zinc-900">Transactions</h3>
+                  <Select value={filter} onValueChange={setFilter}>
+                    <SelectTrigger className="w-[180px] bg-white border-zinc-200 text-zinc-900 shadow-sm">
+                      <SelectValue placeholder="Filter transactions" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-white border-zinc-200">
+                      <SelectItem value="all">All Transactions</SelectItem>
+                      <SelectItem value="deposits">Deposits Only</SelectItem>
+                      <SelectItem value="withdrawals">Withdrawals Only</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <div className="space-y-3">
+          
+          <div className="space-y-3 mt-4">
             {filteredTransactions.map((transaction: transactionProps, idx) => (
               <div key={idx}>
                 <Transactitem transaction={transaction} />
